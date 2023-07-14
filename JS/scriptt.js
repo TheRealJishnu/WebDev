@@ -34,3 +34,22 @@ function NewFunction(){
 
 // function add(a, b)
 
+function Get3(){
+    var a = parseInt(prompt("Enter First Number : "))
+    var b = parseInt(prompt("Enter Second Number : "))
+    var c = parseInt(prompt("Enter Third Number : "))
+    var max = 0
+    if(a>b && a>c){
+        max = a;
+    }
+    else{
+        if(b>c){
+            max = b
+        }
+        else{
+            max = c
+        }
+    }
+
+    window.alert("Max number is : " + max)
+}

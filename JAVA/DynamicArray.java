@@ -5,8 +5,9 @@ class DynArray
     int size, n;
     int arr[];
     Scanner sc = new Scanner(System.in);
-    public DynArray(int size)
+    public DynArray(int s)
     {
+        size=s;
         arr = new int[size];
         n = 0;
     }
@@ -24,7 +25,7 @@ class DynArray
             // n = 0;
             // return 0;
         }while(n > size);
-
+        System.out.print("Enter the Elements: ");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
@@ -60,7 +61,7 @@ class DynArray
     int deletion()
     {
         if(n == 0){
-            System.out.println("Cannot Delete in Empty Array");
+            System.out.println("Array is Empty, Cannot Delete");
             return 0;
         }
 
@@ -71,7 +72,7 @@ class DynArray
             return 0;
         }
 
-        for (int i = ind; i < n; i++) {
+        for (int i = ind; i < n-1; i++) {
             arr[i] = arr[i+1];
         }
         System.out.println("Deletion at index " + ind + " Successfully");
@@ -96,27 +97,21 @@ class DynArray
 
 public class DynamicArray
 {
-    public static void printMenu()
-    {
-        System.out.println("---------------MENU------------------");
-        System.out.println("Enter 1 to Input Array");
-        System.out.println("Enter 2 to Insert an Element in Array");
-        System.out.println("Enter 3 to Delete an Element in Array");
-        System.out.println("Enter 4 to Display Array");
-        System.out.println("Enter 5 to Exit Program");
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Size of Array : ");
         int size = sc.nextInt();
         DynArray a = new DynArray(size);
         while (true) {
-            System.out.println("Enter choice (Enter 0 for Menu): ");
+            System.out.println("---------------MENU------------------");
+            System.out.println("Enter 1 to Input Array");
+            System.out.println("Enter 2 to Insert an Element in Array");
+            System.out.println("Enter 3 to Delete an Element in Array");
+            System.out.println("Enter 4 to Display Array");
+            System.out.println("Enter 5 to Exit Program");
+            System.out.println("Enter choice : ");
             int choice = sc.nextInt();
             switch (choice) {
-                case 0:
-                    printMenu();
-                    break;
                 case 1:
                     a.input();
                     break;
@@ -137,6 +132,6 @@ public class DynamicArray
                     break;
             }
         }
-
+        
     }
 }

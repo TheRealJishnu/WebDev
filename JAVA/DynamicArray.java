@@ -1,39 +1,28 @@
 import java.util.*;
 
-class DynArray
-{
+class DynArray{
     int size, n;
     int arr[];
     Scanner sc = new Scanner(System.in);
-    public DynArray(int s)
-    {
+    public DynArray(int s){
         size=s;
         arr = new int[size];
         n = 0;
     }
-
-    void input()
-    {
-        do
-        {
+    void input(){
+        do{
             System.out.print("Enter Number of Elements To Enter : ");
             n = sc.nextInt();
             if(n > size){
                 System.out.println("Entered Size is More than Capacity");
             }
-                
-            // n = 0;
-            // return 0;
         }while(n > size);
         System.out.print("Enter the Elements: ");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        // return 1;
     }
-
-    int insertion()
-    {
+    int insertion(){
         if(n == size){
             System.out.println("Array is Full, Insertion Not Possible");
             return 0;
@@ -41,9 +30,7 @@ class DynArray
 
         System.out.print("Enter Index Number : ");
         int ind = sc.nextInt();
-        
-        if(ind > n)
-        {
+        if(ind > n){
             System.out.println("Cannot Insert in This Index");
             return 0;
         }
@@ -55,16 +42,13 @@ class DynArray
         arr[ind] = sc.nextInt();
         n++;
         return 1;
-        
     }
 
-    int deletion()
-    {
+    int deletion(){
         if(n == 0){
             System.out.println("Array is Empty, Cannot Delete");
             return 0;
         }
-
         System.out.print("Enter index to Delete : ");
         int ind = sc.nextInt();
         if(ind < 0 || ind >=n){
@@ -80,8 +64,7 @@ class DynArray
         return 1;
     }
 
-    int display()
-    {
+    int display(){
         if(n == 0){
             System.out.println("No Element to Display");
             return 0;
@@ -132,6 +115,5 @@ public class DynamicArray
                     break;
             }
         }
-        
     }
 }

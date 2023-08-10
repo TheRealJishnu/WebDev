@@ -19,7 +19,7 @@ public class ArrayListInsertDelete {
         boolean flg;
         int i;
         do{
-            System.out.print("Enter Index to Insert : ");
+            System.out.print("Enter Index to Delete : ");
             i = sc.nextInt();
             flg = i < 0 || i > arr.size()-1;
             if(flg) System.out.println("Index Cannot be less than 0 or Greater than Size, Enter Again");

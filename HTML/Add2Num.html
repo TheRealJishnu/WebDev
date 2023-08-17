@@ -26,11 +26,33 @@
         function add()
         {
             var a, b, c;
-            a = document.getElementById("num1").value;
-            b = document.getElementById("num2").value;
-
-            c = Number(a) + Number(b);
-            document.getElementById("result").innerHTML = "Sum is : " + c;
+            if (document.getElementById("num1").value=="" ) {
+                alert("Please enter a number");
+                document.getElementById("num1").focus();
+                document.getElementById("num1").value="";
+            }
+            else if (isNaN(document.getElementById("num1").value)) {
+                alert("1st value is not a number");
+                document.getElementById("num1").focus();
+                document.getElementById("num1").value="";
+                }
+            else if(document.getElementById("num2").value==""){
+                alert("2nd field is empty ");
+                document.getElementById("num2").focus();
+                document.getElementById("num2").value="";
+            }
+            else if(isNaN(document.getElementById("num2").value)){
+                alert("2nd value is not a number");
+                document.getElementById("num2").focus();
+                document.getElementById("num2").value="";
+            }
+            else{
+                a=Number(document.getElementById("num1").value);
+                b=Number(document.getElementById("num2").value);
+                c=a+b;
+                document.getElementById("result").innerHTML="Sum is :"+c;
+                 
+            }
 
         }
     </script>

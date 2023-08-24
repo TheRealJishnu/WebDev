@@ -1,0 +1,35 @@
+<!-- Create an event driven program to print a table of numbers from 5 to 15 and their squares and cubes in a webpage. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin:2vb">
+    
+    <h1>Welcome to Square Cube Webpage</h1>
+    <table id="tbl" border="2px" cellspacing="2px">
+        <tr>
+            <th>Number</th>
+            <th>Squares</th>
+            <th>Cubes&nbsp&nbsp&nbsp</th>
+        </tr>
+    </table>
+
+    <script>
+        var a;
+        const tbl = document.getElementById("tbl");
+            for (let i = 5; i <= 15; i++) {
+                number = i;
+                sqr = i*i;
+                cb = i*i*i;
+                a  = `<tr><td>${number}</td><td>${sqr}</td><td>${cb}</td></tr>`;
+                console.log(a);
+                tbl.innerHTML += a;
+                
+            }
+    </script>
+</body>
+
+</html>

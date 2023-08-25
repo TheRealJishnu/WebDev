@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JishnuSum2</title>
+</head>
+<body>
+    <h2>Welcome to Sum and Average WebPage version j.2.0</h2>
+    <input type="button" onclick="action()" value="Click Me">
+
+    <script>
+        function action(){
+            let sum = 0;
+            let count = 0;
+            while(true) {
+                let x = Number(prompt("Enter number to Add : "));
+                if(isNaN(x)){
+                    alert("This is not a Number")
+                    i--;
+                }
+                else if(x == 0){
+                    alert("You have entered zero");
+                    break;
+                }
+                else if(x < 0){
+                    prompt("This Number is Not a Positive Number");
+                }
+                else{
+                    sum += x;
+                    count++;
+                }
+            }
+            let av = sum/count;
+            alert("Sum is : " + sum + "\n");
+            alert("Average is : " + av + "\n");
+        }
+
+    </script>
+</body>
+</html>

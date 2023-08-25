@@ -12,7 +12,12 @@
     <script>
         function action(){
             let sum = 0;
-            let n = Number(prompt("Enter Number of Inputs: "));
+            let flg = 1, n;
+            do{
+                n = Number(prompt("Enter Number of Inputs: "));
+                if(n > 0 && !isNaN(n)) flg = 0;
+                if(flg) alert("Length should be a Positive Integer")
+            }while(flg);
             for(let i=0; i < n; i++) {
                 let x = Number(prompt("Enter number to Add : "));
                 if(isNaN(x)){

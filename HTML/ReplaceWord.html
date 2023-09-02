@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Replace</title>
+</head>
+<body>
+    <h1>Find and Replace Website</h1>
+    <h3>Input String</h3>
+    <input type="text" id="inp">
+    <h3>Find</h3>
+    <input type="text" id="find">
+    <h3>Input String</h3>
+    <input type="text" id="repl">
+    <h2 id="res"></h2>
+    <input type="button" value="Find And Replace All" onclick="func()">
+
+    <script>
+        function func(){
+            let arr = document.getElementById("inp").value.split(" ");
+            for(let i=0; i<arr.length; i++){
+                if(arr[i] == document.getElementById("find").value){
+                    arr[i] = document.getElementById("repl").value;
+                }
+            }
+
+            let res = "";
+            res = arr.join(" ");
+
+            document.getElementById("res").innerHTML = res;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive Negative and Zero Count</title>
+</head>
+<body>
+    <h1>Welcome to Positive, Negative and Zero Count Program</h1>
+    <input type="button" value="START" onclick="func()" id="btn">
+    <h2 id="pos"></h2>
+    <h2 id="neg"></h2>
+    <h2 id="zero"></h2>
+    <script>
+        function func(){
+            //Input and Validate n
+            let flg = 1, n = 0;
+            while(flg){
+                n = prompt("Enter Number of Inputs : ");
+                if(isNaN(n) || n < 1){
+                    alert("Please Enter a Valid Input Size");
+                }
+                else flg = 0;
+            }
+            //Main Program
+            let zero=0, pos=0, neg=0;
+            for (let i = 0; i < n; i++) {
+                let flg = 1, temp;
+                while(flg){
+                    temp = prompt("Enter Input");
+                    if(isNaN(temp) || temp==""){
+                        alert("Please Enter a Number");
+                    }
+                    else flg = 0;
+                }
+                temp = Number(temp);
+                if(temp > 0) pos++;
+                else if(temp < 0) neg++;
+                else zero++;
+                
+            }
+            document.getElementById("pos").innerHTML = "Positive Number Count : " + pos;
+            document.getElementById("neg").innerHTML = "Negative Number Count : " + neg;
+            document.getElementById("zero").innerHTML = "Zero Number Count : " + zero;
+            document.getElementById("btn").value= "RESTART";
+
+        }
+    </script>
+</body>
+</html>

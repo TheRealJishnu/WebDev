@@ -11,14 +11,13 @@
     <p>Enter Years to Calculate : </p>
     <input type="number" id="n" value=100>
     <input type="button" onclick="func()" value="CALCULATE">
-    <table id="tbl" cellspacing="2px" border="2px" style="text-align: center;">
-        <tr>
-            <th>Year</th><th>Interest</th>
-        </tr>
-    </table>
+    <table id="tbl" cellspacing="2px" border="2px" style="text-align: center;"></table>
 
     <script>
         function func(){
+            document.getElementById("tbl").innerHTML = "";
+            let h = `<tr><th>Year</th><th>Interest</th></tr>`;
+            document.getElementById("tbl").innerHTML += h;
             let p = 1000, r = 5;
             let n = document.getElementById("n").value;
             let a;

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Interest Calculation</h2>
+    <p>Current Balance -> 1000</p>
+    <p>Enter Years to Calculate : </p>
+    <input type="number" id="n" value=100>
+    <input type="button" onclick="func()" value="CALCULATE">
+    <table id="tbl" cellspacing="2px" border="2px" style="text-align: center;">
+        <tr>
+            <th>Year</th><th>Interest</th>
+        </tr>
+    </table>
+
+    <script>
+        function func(){
+            let p = 1000, r = 5;
+            let n = document.getElementById("n").value;
+            let a;
+            for(let i=1; i<=n; i++){
+                let ans = p*((1 + (r/100))**i);
+                ans = ans.toFixed(2);
+                a = `<tr><td>${i}</td><td>${ans}</td></tr>`
+                document.getElementById("tbl").innerHTML += a;
+            }
+
+        }
+    </script>
+</body>
+</html>

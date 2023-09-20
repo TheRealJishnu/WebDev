@@ -32,7 +32,7 @@
                     <input type="reset" value="CLEAR">
                 </td>
                 <td>
-                   <input type="submit" onclick="sub()" value="SUBMIT"></button>
+                   <input type="submit" onclick="return sub()" value="SUBMIT">
                 </td>
             </tr>
         </table>
@@ -46,12 +46,12 @@
             if (fname == "") {
                 alert("Empty First Name");
                 document.getElementById("fname").focus();
-                // return false;
+                return false;
             }
             else if (lname == "") {
                 alert("Empty Last Name");
                 document.getElementById("lname").focus();
-                // return false;
+                return false;
             }
             else {
                 alert("Form Submitted Successfully");

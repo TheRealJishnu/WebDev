@@ -9,14 +9,14 @@
 
 <body>
     <h2>WELCOME TO FIRST WEBAPP</h2>
-    <form action="b.jsp" method="get()">
+    <form action="b.jsp" method="get">
         <table>
             <tr>
                 <td>
                     First Name
                 </td>
                 <td>
-                    <input type="text" id="fname">
+                    <input type="text" id="fname" name="fn">
                 </td>
             </tr>
             <tr>
@@ -24,7 +24,7 @@
                     Last Name
                 </td>
                 <td>
-                    <input type="text" id="lname">
+                    <input type="text" id="lname" name="ln">
                 </td>
             </tr>
             <tr>
@@ -32,7 +32,7 @@
                     <input type="reset" value="CLEAR">
                 </td>
                 <td>
-                    <input type="button" id="btn" onclick="submission()" value="SUBMIT">
+                   <input type="submit" onclick="sub()" value="SUBMIT"></button>
                 </td>
             </tr>
         </table>
@@ -40,16 +40,18 @@
 
 
     <script>
-        function submission() {
+        function sub() {
             fname = document.getElementById("fname").value;
             lname = document.getElementById("lname").value;
             if (fname == "") {
                 alert("Empty First Name");
                 document.getElementById("fname").focus();
+                // return false;
             }
             else if (lname == "") {
                 alert("Empty Last Name");
                 document.getElementById("lname").focus();
+                // return false;
             }
             else {
                 alert("Form Submitted Successfully");

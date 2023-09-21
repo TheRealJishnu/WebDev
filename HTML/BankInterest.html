@@ -11,7 +11,7 @@
     <p>Enter Years to Calculate : </p>
     <input type="number" id="n" value=100>
     <input type="button" onclick="func()" value="CALCULATE">
-    <table id="tbl" cellspacing="2px" border="2px" style="text-align: center;"></table>
+    <table id="tbl" cellspacing="2px" style="text-align: center;"></table>
 
     <script>
         function func(){
@@ -20,6 +20,11 @@
             document.getElementById("tbl").innerHTML += h;
             let p = 1000, r = 5;
             let n = document.getElementById("n").value;
+            if(n <= 0){
+                alert("Please Enter A Valid Year");
+                document.getElementById("n").focus();
+
+            }
             let a;
             for(let i=1; i<=n; i++){
                 let ans = p*((1 + (r/100))**i);

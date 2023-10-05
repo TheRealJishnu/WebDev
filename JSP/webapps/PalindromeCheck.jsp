@@ -21,12 +21,12 @@
         for(int i=1; i<=len/2; i++){
             if(numAt(num, i) != numAt(num, len-i+1)){
                 flg = false;
-                out.println("Not A Palindrome");
+                out.println("Not A Palindrome Number");
                 break;
             }
         }
         if(flg){
-            out.println("This Number is a Palindrome");
+            out.println("This is a Palindrome Number ");
         }
 
         

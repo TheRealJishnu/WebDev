@@ -15,8 +15,8 @@
     <script>
         function inpCheck(){
             let num = document.getElementById("st").value;
-            if(isNaN(num) || st==""){
-                alert("Please Input a Number");
+            if(isNaN(num) || num=="" || Number(num) < 0){
+                alert("Please Input a Valid Number");
                 document.getElementById("box").focus();
                 return false;
             }

@@ -8,7 +8,7 @@
 <body>
     <h1>Palindrome Check</h1>
     <%!
-        int numAt(int num, int len, int i){
+        int numAt(int num, int i){
             num /= Math.pow(10, i-1);
             return num % 10;
         }
@@ -19,9 +19,10 @@
         int num = Integer.parseInt(s);
         boolean flg = true;
         for(int i=1; i<=len/2; i++){
-            if(numAt(num, len, i) != numAt(num, len, len-i+1)){
+            if(numAt(num, i) != numAt(num, len-i+1)){
                 flg = false;
                 out.println("Not A Palindrome");
+                break;
             }
         }
         if(flg){

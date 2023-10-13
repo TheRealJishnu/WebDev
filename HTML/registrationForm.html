@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="fn" required></td>
+            </tr>
+            <tr>
+                <td>Middle Name</td>
+                <td><input type="text" id="mn" required></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="ln" required></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><select id="gnd">
+                    <option id="def">--SELECT--</option>
+                    <option id="male">Male</option>
+                    <option id="female">Female</option>
+                    <option id="others">Others</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>E-mail ID</td>
+                <td><input type="text" id="mail" required>@example.com</td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="text" id="ph" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="pss" required></td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" id="cnfpss" required></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="RESET"></td>
+                <td><input type="submit" onclick="return validate()"></td>
+            </tr>
+        </table>
+    
+
+    <script>
+        function passCheck() {
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+            input = document.getElementById("pss").value;
+            let val =  regex.test(input);
+            console.log(val);
+            return val;
+        }
+        function usrCheck() {
+            let regex = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-])$/;
+            input = document.getElementById("mail").value;
+            let val = regex.test(input);
+            console.log(val);
+            return val;
+        }
+        function validate() {
+            if(!passCheck()) {
+                alert("Password must have at least 8 characters, one digit, one uppercase and lowercase character and one special character");
+                return false;
+            }
+            let user = document.getElementById("mail").value;
+            if(user.length < 6 || user.length > 30) {
+                alert("Username of E-mail must be between 6 and 30");
+            }
+
+            
+
+
+        }
+    </script>
+</body>
+</html>
